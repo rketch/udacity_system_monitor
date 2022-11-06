@@ -37,7 +37,8 @@ string Process::User() {
 
 // DTODO: Return the age of this process (in seconds)
 long int Process::UpTime() { 
-  return LinuxParser::UpTime(pid_); }
+  // thank you IG! https://knowledge.udacity.com/questions/263312
+  return LinuxParser::UpTime() - LinuxParser::UpTime(pid_);}
 
 
 // DTODO: Overload the "less than" comparison operator for Process objects
